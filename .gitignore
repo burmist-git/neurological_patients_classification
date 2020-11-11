@@ -1,3 +1,5 @@
 data/Data_DT1.csv
 data/Data_DT2.csv
 data/Data-ST.csv
+tmp
+.ipynb_checkpoints/

@@ -4,6 +4,8 @@
 # Autor       : Leonid Burmistrov
 # Description : 
 
+# conda install pandas-profiling
+
 function create_sh {
     conda create --name $evnName -y numpy pandas notebook
     conda env list
