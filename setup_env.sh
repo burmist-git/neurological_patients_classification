@@ -4,8 +4,8 @@
 # Autor       : Leonid Burmistrov
 # Description : 
 
-# conda install pandas-profiling
-
+# Libraries to be added
+# conda install -c conda-forge pandas-profiling=2.9.0
 function create_sh {
     conda create --name $evnName -y numpy pandas notebook
     conda env list
@@ -20,12 +20,19 @@ function clean_sh {
     rm -rf *~ build dist trainingpython.egg-info __pycache__ .ipynb_checkpoints
 }
 
+function zipTheFile {
+    zip -r $1'.zip' $1
+}
+
 function printHelp {
     echo " --> ERROR in input arguments "
     echo " -c     : clean "
     echo " -h     : print help "
     echo " -conda : create environment "
-    echo " INFO   : To conda env --> conda activate neuro"
+    echo " -zip   : zip the file "
+    echo "    [1] : file to zip "
+    echo " "
+    echo " INFO   : To setup conda environment --> conda activate neuro"
 }
 
 evnName='neuro'
@@ -39,6 +46,10 @@ else
 	printHelp
     elif [ "$1" = "-conda" ]; then
 	create_sh
+    elif [ "$1" = "-zip" ]; then
+	if [ $# -eq 2 ]; then
+	    zipTheFile $2
+	fi
     else
         printHelp
     fi
