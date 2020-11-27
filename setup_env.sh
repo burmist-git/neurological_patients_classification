@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Date        : Sun Nov  8 19:50:25 CET 2020
-# Autor       : Leonid Burmistrov
+# Autor       : Leonid Burmistrov, Andrii Kleshchonok
 # Description : 
 
 # Libraries to be added
