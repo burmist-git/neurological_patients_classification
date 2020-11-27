@@ -17,7 +17,8 @@ function create_sh {
 }
 
 function clean_sh {
-    rm -rf *~ build dist trainingpython.egg-info __pycache__ .ipynb_checkpoints
+    rm -rf *~
+    rm -rf */*~
 }
 
 function zipTheFile {
