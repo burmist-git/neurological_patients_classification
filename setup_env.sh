@@ -6,6 +6,8 @@
 
 # Libraries to be added
 # conda install -c conda-forge pandas-profiling=2.9.0
+# conda install -y scikit-learn
+
 function create_sh {
     conda create --name $evnName -y numpy pandas notebook
     conda env list
@@ -19,6 +21,8 @@ function create_sh {
 function clean_sh {
     rm -rf *~
     rm -rf */*~
+    rm -rf \#*
+    rm -rf .#*
 }
 
 function zipTheFile {
@@ -34,6 +38,10 @@ function printHelp {
     echo "    [1] : file to zip "
     echo " "
     echo " INFO   : To setup conda environment --> conda activate neuro"
+    echo " INFO   : To install --> conda install pandas-profiling=2.9.0"
+    echo " INFO   : To list all the packages available --> conda search"
+    echo " INFO   : To install from https://conda-forge.org/ --> conda install -c conda-forge pandas-profiling=2.9.0"
+    echo " INFO   : To list all the packages available in https://conda-forge.org/ --> conda search -c conda-forge"
 }
 
 evnName='neuro'
